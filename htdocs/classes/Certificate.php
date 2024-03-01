@@ -25,27 +25,30 @@
         }
 
 
-    // GETTER & SETTER
+    // GETTER 
 
         public function getExpiresAt()
         {
             return $this->expiresAt;
         }
 
-        public function setExpiresAt($expiresAt)
-        {
-            $this->expiresAt = $expiresAt;
-        }
-
-
         public function getSignatory()
         {
             return $this->signatory;
         }
 
+    // SETTER 
+
         public function setSignatory($signatory)
         {
             $this->signatory = $signatory;
         }
+
+
+        public function setExpiresAt($expiresAt)
+        {
+            $this->expiresAt = $expiresAt;
+        }
+
 
     }

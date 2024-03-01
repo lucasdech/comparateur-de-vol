@@ -3,9 +3,10 @@
 
 class Destination{
 
-    private $id;
-    private $location;
-    private $price;
+    private int $id;
+    private string $location;
+    private int $price;
+    private int $tour_operator_id;
 
 
 
@@ -29,27 +30,16 @@ class Destination{
     }
 
 
-    // GETTER & SETTER
+    // GETTER
 
     public function getId()
     {
         return $this->id;
     }
 
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-
     public function getLocation()
     {
         return $this->location;
-    }
-
-    public function setLocation($location)
-    {
-        $this->location = $location;
     }
 
     public function getPrice()
@@ -57,8 +47,32 @@ class Destination{
         return $this->price;
     }
 
+    public function getTour_operator_id()
+    {
+        return $this->tour_operator_id;
+    }
+
+
+    // SETTER
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    public function setLocation($location)
+    {
+        $this->location = $location;
+    }
+
     public function setPrice($price)
     {
         $this->price = $price;
     }
+
+    public function setTour_operator_id($tour_operator_id)
+    {
+        $this->price = $tour_operator_id;
+    }
+
 }

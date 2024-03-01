@@ -3,13 +3,13 @@
 
 class TourOperateur{
 
-    private $id;
-    private $name;
-    private $link;
-    private $certificate;
-    private $destinations;
-    private $reviews;
-    private $scores;
+    private int $id;
+    private string $name;
+    private string $link;
+    private bool $certificate = false;
+    private string $destinations;
+    private string $reviews;
+    private int $scores;
 
 
 
@@ -44,7 +44,6 @@ class TourOperateur{
     {
         $this->id = $id;
     }
-
 
     public function getName()
     {
