@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    salut 
+    salut la mif
 </body>
 </html>
