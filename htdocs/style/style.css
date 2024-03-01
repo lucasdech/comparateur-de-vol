@@ -1,0 +1,17 @@
+body {
+    background-color: #F2E0C9;
+}
+
+.NavBar {
+    background-image: url(../images/images/plage.jpg); 
+    background-size: cover;
+    background-position: center; 
+}
+
+.Left_Nav {
+
+    position: absolute;
+    background-color: #04BFBF;
+    width: 15%;
+    height: 100vh;
+}
