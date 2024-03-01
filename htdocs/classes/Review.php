@@ -3,9 +3,9 @@
 
 class Review{
 
-    private $id;
-    private $message;
-    private $author;
+    private int $id;
+    private string $message;
+    private string $author;
 
 
 
@@ -29,27 +29,11 @@ class Review{
     }
 
 
-    // GETTER & SETTER
+    // GETTER
 
     public function getId()
     {
         return $this->id;
-    }
-
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-
-    public function getMessage()
-    {
-        return $this->message;
-    }
-
-    public function setMessage($message)
-    {
-        $this->message = $message;
     }
 
     public function getAuthor()
@@ -57,8 +41,26 @@ class Review{
         return $this->author;
     }
 
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+    // SETTER 
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
     public function setAuthor($author)
     {
         $this->author = $author;
     }
+
+    public function setMessage($message)
+    {
+        $this->message = $message;
+    }
+ 
 }
