@@ -1,5 +1,9 @@
 <?php include "./partials/header.php";?>
 
+<?php
+ 
+?>
+
 <!-- LIEN VERS LA FEIULLE DE STYLE -->
 
 <link rel="stylesheet" href="style/index.css">
@@ -36,6 +40,7 @@
         </div>   
         <div class="col-5"> 
             <p>Voir les offres<i class="fa-solid fa-angles-right ms-3" style="color: #ffffff;"></i></p> 
+
             
         </div>
     </section>
