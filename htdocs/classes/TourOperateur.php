@@ -33,16 +33,11 @@ class TourOperateur{
     }
 
 
-    // GETTER & SETTER
+    // GETTER
 
     public function getId()
     {
         return $this->id;
-    }
-
-    public function setId($id)
-    {
-        $this->id = $id;
     }
 
     public function getName()
@@ -50,14 +45,41 @@ class TourOperateur{
         return $this->name;
     }
 
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
     public function getLink()
     {
         return $this->link;
+    }
+    
+    public function getCertificate()
+    {
+        return $this->certificate;
+    }
+    
+    public function getDestinations()
+    {
+        return $this->destinations;
+    }
+    
+    public function getReview()
+    {
+        return $this->reviews;
+    }
+
+    public function getScores()
+    {
+        return $this->scores;
+    }
+
+    // SETTER
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    public function setName($name)
+    {
+        $this->name = $name;
     }
 
     public function setLink($link)
@@ -65,19 +87,9 @@ class TourOperateur{
         $this->link = $link;
     }
 
-    public function getCertificate()
-    {
-        return $this->certificate;
-    }
-
     public function setCertificate($certificate)
     {
         $this->certificate = $certificate;
-    }
-
-    public function getDestinations()
-    {
-        return $this->destinations;
     }
 
     public function setDestinations($destinations)
@@ -85,23 +97,16 @@ class TourOperateur{
         $this->destinations = $destinations;
     }
 
-    public function getReview()
-    {
-        return $this->reviews;
-    }
-
     public function setReview($reviews)
     {
         $this->reviews = $reviews;
     }
     
-    public function getScores()
-    {
-        return $this->scores;
-    }
-
     public function setScores($scores)
     {
         $this->scores = $scores;
     }
+
+
+  
 }

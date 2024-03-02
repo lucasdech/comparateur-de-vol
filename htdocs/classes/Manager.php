@@ -13,6 +13,7 @@ class Manager{
 
     // autre methodes a trier par methodes par classes 
 
+  // methodes de test
 
     
 }
