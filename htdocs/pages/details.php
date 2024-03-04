@@ -4,28 +4,27 @@
 
 
  $manager = new Manager($connexion);
- $test = $manager->DestinationByCompanie($DestinationName);
+ $destinationByOperator = $manager->DestinationByCompanie($DestinationName);
 
- echo "<pre>";
- var_dump($test);
- echo "</pre>";
- die;
-
+var_dump($destinationByOperator[0]['location']);
 
 ?>
 
 <!-- LIEN VERS LA FEIULLE DE STYLE DE LA PAGE  -->
 
-<link rel="stylesheet" href="../style/login.css">
+<link rel="stylesheet" href="../style/details.css">
 
 
-<section class="destination text-white d-flex align-items-center justify-content-around col-12">
-                    <div class="col-3 d-flex justify-content-center align-items-center" style="background-color: rgba(0, 0, 0, 0.5);">
-                         <img src="../images/images/Agencedevoyage/Fram.png" height="100px" alt="">
-                         <p class="fs-1"><?=$_GET['Destination']?></p>      
-                           
-                    </div>   
-                   
-</section>
 
-  
+<?php 
+
+foreach ($destinationByOperator as $destination) {
+        // var_dump($destination)
+    ?>   
+        <section class="affichage d-flex align-items-center justify-content-around col-12 mt-5" style="background-image: url(../images/images/destination/<?=$destination['location']?>.jpeg);">
+            <div class="col-3 d-flex justify-content-center align-items-center" style="background-color: rgba(0, 0, 0, 0.5);">
+                <p class="fs-1"><?=$destination['location']?></p>
+            </div>
+        </section>
+
+<?php } ?>
