@@ -6,7 +6,7 @@
  $manager = new Manager($connexion);
  $destinationByOperator = $manager->DestinationByCompanie($DestinationName);
 
-var_dump($destinationByOperator[0]['location']);
+var_dump($destinationByOperator);
 
 ?>
 
