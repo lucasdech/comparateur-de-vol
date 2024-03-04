@@ -13,7 +13,24 @@ class Manager{
 
     // autre methodes a trier par methodes par classes 
 
-  // methodes de test
+  public function LoadAllDestination()
+  {
+    $prepareSQL = $this->connexion->prepare('SELECT * FROM destination');
+    $prepareSQL->execute();
+
+    $listDestinations = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
+
+    $destinationArray = [];
+
+    foreach ($listDestinations as $key) {
+      $destination = new Destination($key);
+      array_push($destinationArray, $destination);
+    }
+
+    return $destinationArray;
+  }
 
     
+
+  
 }

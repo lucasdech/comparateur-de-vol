@@ -1,18 +1,10 @@
-.presentation {
-
-    width: 60%;
-    margin-top: 5%;
-    margin-left: 25%;
-    background-color: #04BFBF;
-}
 
 .destination {
 
     width: 60%;
-    height: 150px;
+    height: 300px;
     margin-top: 5%;
     margin-left: 25%;
-    background-image: url(../images/images/Rome1.jpeg) ;
     background-size: cover;
     background-position: center;
 }
