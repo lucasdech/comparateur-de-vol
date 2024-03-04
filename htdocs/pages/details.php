@@ -6,7 +6,6 @@
  $manager = new Manager($connexion);
  $destinationByOperator = $manager->DestinationByCompanie($DestinationName);
 
-var_dump($destinationByOperator);
 
 ?>
 
@@ -26,5 +25,6 @@ foreach ($destinationByOperator as $destination) {
                 <p class="fs-1"><?=$destination['location']?></p>
             </div>
         </section>
+
 
 <?php } ?>
