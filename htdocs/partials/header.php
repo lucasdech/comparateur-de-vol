@@ -19,6 +19,7 @@ require __DIR__ . '/../setting/messages.php';
     </head>
     <body>
 
+    <!-- nav bar du haut -->
     <header>
         <section class="NavBar d-flex align-items-center justify-content-around position fixed">
             <div>
@@ -28,12 +29,73 @@ require __DIR__ . '/../setting/messages.php';
                 <h1 class="text-white">TRAV L<i class="fa-solid fa-earth-africa fa-xs" style="color: #ffffff;"></i>W</h1>
             </div>
             <div>
-                <button type="button" class="btn btn-outline-light">Se connecter</button>
+                <!-- bouton qui ouvre la modal -->
+
+            <?php 
+                if (empty($_SESSION)) {
+                    
+                  ?>  <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#connexion">Se connecter</button>
+                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#createAcount">Crer un compte</button>
+               <?php } else {
+                  ?>  <a href="../process/login_and_register_process/Deconnexion.php"><button class="btn btn-outline-light" type="button">Deconnexion</button></a>
+                <?php } ?>
+
             </div>
         </section>
     </header>
-   
 
+    <!-- DEBUT DE LA MODAL CONNEXION -->
+
+    <div class="modal fade" id="connexion" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Connexion</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="../process/login_and_register_process/login.php" method="post">
+                        <input type="text" class="form-control" name="Username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="password" class="form-control mt-3" name="Password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                        <button type="submit" class="btn btn-primary mt-3">Se connecter</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Femer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- FIN DE LA MODAL CONNEXION -->
+
+    <!-- DEBUT DE LA MODAL CREATE ACOUNT -->
+
+        <div class="modal fade" id="createAcount" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Creer votre compte </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="../process/login_and_register_process/add_user.php" method="post">
+                        <input type="text" class="form-control" name="Username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="password" class="form-control mt-3" name="Password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                        <button type="submit" class="btn btn-primary mt-3">Creation du compte</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Femer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- FIN DE LA MODAL CREATE ACOUNT -->
+
+
+    <!-- début navbar de la gauche  -->
 
     <section class="Left_Nav d-flex col-12 justify-content-center text-center text-white">
         <div class="mt-5 me-2 row col-10">
@@ -48,4 +110,6 @@ require __DIR__ . '/../setting/messages.php';
             <i class="fa-brands fa-instagram" style="color: #ffffff;"></i><p>@stepahne_supercar</p>
         </div>
     </section>
+
+    <!-- fin navbar de la gauche  -->
 
