@@ -30,7 +30,20 @@ class Manager{
     return $destinationArray;
   }
 
-    
+  
+  public function DestinationByCompanie(string $destination)
+  {
+    $prepareSQL = $this->connexion->prepare('SELECT * FROM destination 
+                                                RIGHT JOIN tour_operator 
+                                                  ON destination.tour_operator_id = tour_operator.id 
+                                                WHERE destination.location = ?'
+                                            );
+    $prepareSQL->execute([$destination]);
+
+    $destinations = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
+
+    return $destinations;
+  }
 
   
 }
