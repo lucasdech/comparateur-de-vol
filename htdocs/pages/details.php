@@ -4,5 +4,5 @@
 
 <link rel="stylesheet" href="../style/login.css">
 
-    <!-- formulaire d'inscription  -->
+
 
