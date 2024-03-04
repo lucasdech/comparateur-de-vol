@@ -4,13 +4,7 @@
 
 
  $manager = new Manager($connexion);
- $test = $manager->DestinationByCompanie($DestinationName);
-
- echo "<pre>";
- var_dump($test);
- echo "</pre>";
- die;
-
+ $destinationByOperator = $manager->DestinationByCompanie($DestinationName);
 
 ?>
 
@@ -19,13 +13,22 @@
 <link rel="stylesheet" href="../style/login.css">
 
 
-<section class="destination text-white d-flex align-items-center justify-content-around col-12">
-                    <div class="col-3 d-flex justify-content-center align-items-center" style="background-image= ;">
-                         <img src="../images/images/Agencedevoyage/Fram.png" height="100px" alt="">
-                         <p class="fs-1"><?=$_GET['Destination']?></p>      
+<?php 
 
-                    </div>   
-                   
-</section>
+foreach ($destinationByOperator as $destination) {
+    
+    ?>   <section class="destination text-white d-flex align-items-center justify-content-around col-12" style="background-image: url(./images/images/destination/<?=$destination->getLocation()?>.jpeg);">
+            <div class="col-3 d-flex justify-content-center align-items-center" style="background-color: rgba(0, 0, 0, 0.5);">
+                <p class="fs-1"><?=$destination->getLocation()?></p>
+            </div>   
+            <div class="col-5"> 
+                <a href="./pages/details.php?Destination=<?=$destination->getLocation()?>"><button class="btn btn-outline-light m-3">Voir les offres<i class="fa-solid fa-angles-right ms-3" style="color: #ffffff;"></i></button></a> 
+            </div>
+        </section>
+<?php } ?>
+
+
+<?php include "./partials/footer.php"?>
+
 
   
