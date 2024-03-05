@@ -15,7 +15,7 @@
 
         foreach ($destinations as $destination) {
             
-            ?>   <section class="destination text-white d-flex align-items-center justify-content-around col-12" style="background-image: url(./images/images/destination/<?=$destination->getLocation()?>.jpeg);">
+            ?>   <section class="destination text-white d-flex align-items-center justify-content-around col-12" style="background-image: url(./images/images/destination/<?=$destination->getLocation()?>.jpg);">
                     <div class="col-3 d-flex justify-content-center align-items-center" style="background-color: rgba(0, 0, 0, 0.5);">
                         <p class="fs-1"><?=$destination->getLocation()?></p>
                     </div>   
