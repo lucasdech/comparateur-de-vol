@@ -30,25 +30,36 @@ class Manager{
     return $destinationArray;
   }
 
-  public function DestinationByCompanie(string $destination)
-  {
-    $prepareSQL = $this->connexion->prepare('SELECT * FROM destination 
-                                                RIGHT JOIN tour_operator 
-                                                  ON destination.tour_operator_id = tour_operator.id 
-                                                WHERE destination.location = ?'
-                                            );
-    $prepareSQL->execute([$destination]);
+  
+   public function DestinationByCompanie(string $destination)
+   {
+       $prepareSQL = $this->connexion->prepare('SELECT * FROM destination 
+                                                  LEFT JOIN tour_operator 
+                                                   ON destination.tour_operator_id = tour_operator.id 
+                                                 WHERE destination.location = ?'
+                                           );
+  
+     $prepareSQL->execute([$destination]);
 
-    $destinations = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
+     $destinations = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
 
-    $array = [];
+     $destinationArray = [];
 
-    foreach ($destinations as $key) {
-      $destinationObject = new Destination($key); 
-      array_push($array, $destinationObject);
-    }
-    return $array;
-  }
+     foreach ($destinations as $key) {
+
+          $destinationObject = new Destination($key); 
+          $OperatorObject = new TourOperateur($key); 
+
+        $destinationObject->pushOperatorInArray($OperatorObject);
+
+        array_push($destinationArray, $destinationObject);
+   }
+  
+     return $destinationArray;
+
+ }
+
+
 
   
 }
