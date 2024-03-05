@@ -4,7 +4,6 @@ require __DIR__ . '/../setting/db.php';
 require __DIR__ . '/../setting/autoLoader.php';
 require __DIR__ . '/../setting/messages.php';
 // require __DIR__ . '/../setting/debug.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +37,13 @@ require __DIR__ . '/../setting/messages.php';
                     <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#createAcount">Crer un compte</button>
                <?php } else {
                   ?>  <a href="../process/login_and_register_process/Deconnexion.php"><button class="btn btn-outline-light" type="button">Deconnexion</button></a>
-                <?php } ?>
+                    <?php 
+                    if ($_SESSION['pseudo'] == "admin") {
+                        ?><a href="../pages/admin.php"><button class="btn btn-outline-light" type="button">Page Administrateur</button></a>
+                        
+                   <?php }
+
+                } ?>
 
             </div>
         </section>
@@ -96,11 +101,11 @@ require __DIR__ . '/../setting/messages.php';
 
 
     <!-- début navbar de la gauche  -->
-<!-- 
-    <section class="Left_Nav d-flex col-12 justify-content-center text-center text-white">
+
+    <!-- <section class="Left_Nav d-flex col-12 justify-content-center text-center text-white">
         <div class="mt-5 me-2 row col-10">
-          <button class="btn btn-outline-light m-3">quelque chose</button>
-          <button class="btn btn-outline-light m-3">quelque chose</button>
+          <button class="btn btn-outline-light m-3">Toutes les offres de voyage</button>
+          <button class="btn btn-outline-light m-3">Toutes les compagnie de voyage</button>
           <button class="btn btn-outline-light m-3">quelque chose</button>
           <button class="btn btn-outline-light m-3">quelque chose</button>
           <button class="btn btn-outline-light m-3">quelque chose</button>
@@ -108,8 +113,8 @@ require __DIR__ . '/../setting/messages.php';
             <i class="mt-5 fa-solid fa-phone" style="color: #ffffff;"></i><p>06-25-92-32-26</p>
             <i class="fa-solid fa-at" style="color: #ffffff;"></i> <p>TravLow@voyagePasChere.com</p>
             <i class="fa-brands fa-instagram" style="color: #ffffff;"></i><p>@stepahne_supercar</p>
-        </div>
-    </section> -->
+        </div> -->
+    <!-- </section> -->
 
     <!-- fin navbar de la gauche  -->
 

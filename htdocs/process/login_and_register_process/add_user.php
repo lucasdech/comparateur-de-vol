@@ -25,6 +25,6 @@ if (!empty($_POST['Username'])
         header('Location: ../../index.php?success= Compte Creer avec succes !');
 }else{
 
-    header('Location: ../../index.php?error=Merci de remplir le formulaire');
+    header('Location: ../../index.php?error= Merci de remplir le formulaire');
 
 }
