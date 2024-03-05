@@ -30,7 +30,6 @@ class Manager{
     return $destinationArray;
   }
 
-  
   public function DestinationByCompanie(string $destination)
   {
     $prepareSQL = $this->connexion->prepare('SELECT * FROM destination 
@@ -45,7 +44,8 @@ class Manager{
     $array = [];
 
     foreach ($destinations as $key) {
-      array_push($array, $key);
+      $destinationObject = new Destination($key); 
+      array_push($array, $destinationObject);
     }
     return $array;
   }

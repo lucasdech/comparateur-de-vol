@@ -7,6 +7,7 @@ class Destination{
     private string $location;
     private int $price;
     private int $tour_operator_id;
+    private array $tour_operators = [];
 
 
 
