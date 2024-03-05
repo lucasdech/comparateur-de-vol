@@ -20,15 +20,13 @@
 
 <?php 
 
-   
-
 
 foreach ($destinationByOperator as $destination) {
 
     $TourOperator = $destination->getTour_operators();
 
     ?>   
-        <section class="affichage d-flex align-items-center justify-content-around col-12 mt-5" style="background-image: url(../images/images/destination/<?=$destination->getLocation()?>.jpeg);">
+        <section class="affichage d-flex align-items-center justify-content-around col-12 mt-5" style="background-image: url(../images/images/destination/<?=$destination->getLocation()?>.jpg);">
             
             <div class="col-6 d-flex justify-content-center align-items-center text-white" style="background-color: rgba(0, 0, 0, 0.5);">
                 <p class="fs-1"><?=$destination->getLocation()?></p>
