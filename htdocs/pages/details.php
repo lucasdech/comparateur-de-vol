@@ -31,4 +31,5 @@ foreach ($destinationByOperator as $destination) {
 
         </section>
 
+
 <?php } ?>
