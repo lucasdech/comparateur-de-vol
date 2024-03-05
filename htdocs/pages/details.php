@@ -16,8 +16,6 @@
 
 <?php 
 
-   
-
 
 foreach ($destinationByOperator as $destination) {
 
