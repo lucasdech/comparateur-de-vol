@@ -7,10 +7,6 @@
     $manager = new Manager($connexion);
     $destinationByOperator = $manager->DestinationByCompanie($DestinationName);
 
-    echo "<pre>";
-    var_dump($destinationByOperator);
-    echo "</pre>";
-
 ?>
 
 <!-- LIEN VERS LA FEIULLE DE STYLE DE LA PAGE  -->
@@ -28,12 +24,13 @@ foreach ($destinationByOperator as $destination) {
     $TourOperator = $destination->getTour_operators();
 
     ?>   
-        <section class="affichage d-flex align-items-center justify-content-around col-12 mt-5" style="background-image: url(../images/images/destination/<?=$destination->getLocation()?>.jpeg);">
+        <section class="affichage d-flex align-items-center justify-content-around col-12 mt-5" style="background-image: url(../images/images/destination/<?=$destination->getLocation()?>.jpg);">
             
             <div class="col-6 d-flex justify-content-center align-items-center text-white" style="background-color: rgba(0, 0, 0, 0.5);">
-                <p class="fs-1"><?=$destination->getLocation()?></p>
-                <p class="fs-1 mx-5">Prix :<?=$destination->getprice()?></p>
+                <p class="fs-1">Partiez à <?=$destination->getLocation()?>
+                    pour  <?=$destination->getprice()?>$</p>
             </div>
+            <a href="../pages/review.php"><button class="btn btn-light">Voir le details</button></a>
 
            <?php  
                 foreach ($destinationByOperator as $key) {
@@ -45,17 +42,18 @@ foreach ($destinationByOperator as $destination) {
                             $tourOperatorId = $destination->getTour_operator_id();
 
                               if ($key1->getId() == $tourOperatorId) {
-
-                                echo $key1->getName();
                                 ?> 
-                                <img src="../images/images/Agencedevoyage/<?=$key1->getName()?>.jpeg" height="150px" alt="">
-                                <div class="text-white"> </div>
+                                
+                                <div class="text-center">
+                                    <a href="<?=$key1->getLink()?>"><img src="../images/images/Agencedevoyage/<?=$key1->getName()?>.jpeg" height="150px" alt=""></a>
+                                    <div class="text-white fs-3">Partez avec :<?=$key1->getName()?> </div>
 
+                                </div>
                                 <?php
                               }
                         }
                     }
-?>
+                ?>
         </section>
 
 

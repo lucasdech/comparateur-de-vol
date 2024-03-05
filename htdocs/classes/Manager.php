@@ -23,8 +23,15 @@ class Manager{
     $destinationArray = [];
 
     foreach ($listDestinations as $key) {
+
       $destination = new Destination($key);
-      array_push($destinationArray, $destination);
+      // var_dump($destination);
+    
+
+       if (in_array($destination->getLocation(), $destinationArray) == false) {
+        
+               array_push($destinationArray, $destination);
+       }
     }
 
     return $destinationArray;
