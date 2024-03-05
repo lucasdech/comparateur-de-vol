@@ -1,13 +1,11 @@
-<?php include "../partials/header.php";
+<?php include "../partials/header.php"?>
+
+<?php
 
     $DestinationName = $_GET['Destination'];
 
-
     $manager = new Manager($connexion);
     $destinationByOperator = $manager->DestinationByCompanie($DestinationName);
-
-    var_dump($destinationByOperator);
-    
 
 ?>
 
