@@ -5,8 +5,9 @@ class Destination{
 
     private int $id;
     private string $location;
-    private int $price;
+    private $price;
     private int $tour_operator_id;
+    private array $tour_operators = [];
 
 
 
@@ -14,8 +15,8 @@ class Destination{
 
 
     public function __construct(array $destination)
-    {
-        $this->hydrate($destination);
+    {      
+        $this->hydrate($destination);       
     }
 
     public function hydrate(array $destination)
@@ -52,6 +53,10 @@ class Destination{
         return $this->tour_operator_id;
     }
 
+    public function getTour_operators()
+    {
+        return $this->tour_operators;
+    }
 
     // SETTER
 
@@ -72,7 +77,24 @@ class Destination{
 
     public function setTour_operator_id($tour_operator_id)
     {
-        $this->price = $tour_operator_id;
+        $this->tour_operator_id = $tour_operator_id;
+    }
+
+    public function setTour_operators($tour_operators)
+    {
+        $this->tour_operators = $tour_operators;
+    }
+
+    // autre methodes pour l'objet !
+
+    public function pushOperatorInArray(TourOperateur $tourOperateur)
+    {
+        array_push($this->tour_operators, $tourOperateur);
+    }
+
+    public function CountTourOperateur()
+    {
+        return count($this->tour_operators);
     }
 
 }
