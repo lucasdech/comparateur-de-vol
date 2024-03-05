@@ -42,7 +42,12 @@ class Manager{
 
     $destinations = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
 
-    return $destinations;
+    $array = [];
+
+    foreach ($destinations as $key) {
+      array_push($array, $key);
+    }
+    return $array;
   }
 
   
