@@ -16,7 +16,6 @@
 
 <?php 
 
-
 foreach ($destinationByOperator as $destination) {
 
     $TourOperator = $destination->getTour_operators();
@@ -25,7 +24,7 @@ foreach ($destinationByOperator as $destination) {
         <section class="affichage d-flex align-items-center justify-content-around col-12 mt-5" style="background-image: url(../images/images/destination/<?=$destination->getLocation()?>.jpg);">
             
             <div class="col-6 d-flex justify-content-center align-items-center text-white" style="background-color: rgba(0, 0, 0, 0.5);">
-                <p class="fs-1">Partiez à <?=$destination->getLocation()?>
+                <p class="fs-1">Partez à <?=$destination->getLocation()?>
                     pour  <?=$destination->getprice()?>$</p>
             </div>
             <a href="../pages/review.php"><button class="btn btn-light">Voir le details</button></a>
@@ -45,14 +44,13 @@ foreach ($destinationByOperator as $destination) {
                                 <div class="text-center">
                                     <a href="<?=$key1->getLink()?>"><img src="../images/images/Agencedevoyage/<?=$key1->getName()?>.jpeg" height="150px" alt=""></a>
                                     <div class="text-white fs-3">Partez avec :<?=$key1->getName()?> </div>
-
                                 </div>
+
                                 <?php
                               }
                         }
                     }
                 ?>
         </section>
-
 
 <?php } ?>
