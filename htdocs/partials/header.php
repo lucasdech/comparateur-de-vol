@@ -112,7 +112,7 @@ require __DIR__ . '/../setting/messages.php';
             <i class="mt-5 fa-solid fa-phone" style="color: #ffffff;"></i><p>06-25-92-32-26</p>
             <i class="fa-solid fa-at" style="color: #ffffff;"></i> <p>TravLow@voyagePasChere.com</p>
             <i class="fa-brands fa-instagram" style="color: #ffffff;"></i><p>@stepahne_supercar</p>
-        </div>
+        </div> 
     </section> -->
 
     <!-- fin navbar de la gauche  -->
