@@ -36,13 +36,14 @@ class Manager{
 
     return $destinationArray;
   }
+ 
 
-  
+
    public function DestinationByCompanie(string $destination)
    {
        $prepareSQL = $this->connexion->prepare('SELECT * FROM destination 
                                                   LEFT JOIN tour_operator 
-                                                   ON destination.tour_operator_id = tour_operator.id 
+                                                   ON destination.tour_operator_id = tour_operator.idTO 
                                                  WHERE destination.location = ?'
                                            );
   
@@ -65,8 +66,6 @@ class Manager{
      return $destinationArray;
 
  }
-
-
 
   
 }

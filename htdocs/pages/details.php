@@ -27,7 +27,7 @@ foreach ($destinationByOperator as $destination) {
                 <p class="fs-1">Partez à <?=$destination->getLocation()?>
                     pour  <?=$destination->getprice()?>$</p>
             </div>
-            <a href="../pages/review.php"><button class="btn btn-light">Voir le details</button></a>
+            <a href="../pages/review.php?IdVoyage=<?=$destination->getId()?>"><button class="btn btn-light">Voir le details</button></a>
 
            <?php  
                 foreach ($destinationByOperator as $key) {
@@ -38,7 +38,7 @@ foreach ($destinationByOperator as $destination) {
 
                             $tourOperatorId = $destination->getTour_operator_id();
 
-                              if ($key1->getId() == $tourOperatorId) {
+                              if ($key1->getIdTO() == $tourOperatorId) {
                                 ?> 
                                 
                                 <div class="text-center">
