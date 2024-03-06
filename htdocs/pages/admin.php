@@ -5,14 +5,10 @@
     // je prepare ma requete sql et mon SELECT FROM 
     $prepareSQL = $connexion->prepare("SELECT * FROM tour_operator");
     // j'execute ma requete sql
-
-
     $prepareSQL->execute();
     // je fais un tableau associatif 
-
     $TourOperatorList = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
-
-
+    
 ?>
 
 <link rel="stylesheet" href="../style/admin.css">

@@ -8,7 +8,7 @@ class TourOperateur{
     private string $link;
     private bool $certificate = false;
     private string $destinations;
-    private string $reviews;
+    private array $reviews = [];
     private int $scores;
 
 
@@ -108,5 +108,9 @@ class TourOperateur{
     }
 
 
-  
+    public function pushReviewInArray(Review $review)
+    {
+        array_push($this->reviews, $review);
+    }
+
 }

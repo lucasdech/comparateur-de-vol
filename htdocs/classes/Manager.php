@@ -42,7 +42,7 @@ class Manager{
    {
        $prepareSQL = $this->connexion->prepare('SELECT * FROM destination 
                                                   LEFT JOIN tour_operator 
-                                                   ON destination.tour_operator_id = tour_operator.idTO 
+                                                ON destination.tour_operator_id = tour_operator.idTO 
                                                  WHERE destination.location = ?'
                                            );
   
@@ -86,6 +86,30 @@ class Manager{
       return $tourOperatorArray;
     }
   
+
+    public function getALLTourOperator()
+    {
+          $prepareSQL = $this->connexion->prepare('SELECT * FROM tour_operator 
+                                                      JOIN review  
+                                                      ON tour_operator.idTO = review.tour_operator_id');
+          $prepareSQL->execute();
+          
+          $TourOperator = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
+
+          $TourOperatorArray = [];
+
+          foreach ($TourOperator as $key) {
+
+              $TO = new TourOperateur($key);
+              $review = new Review($key);
+
+              $TO->pushReviewInArray($review);
+            array_push($TourOperatorArray, $TO); 
+          }
+          return $TourOperatorArray;
+    }
+
+
 
     public function GetDestinationById(int $id)
     {
