@@ -11,7 +11,7 @@
     // je fais un tableau associatif 
 
     $TourOperatorList = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
-var_dump($TourOperatorList);
+
 
 ?>
 
