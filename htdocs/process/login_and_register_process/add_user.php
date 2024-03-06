@@ -20,8 +20,6 @@ if (!empty($_POST['Username'])
             $hashed_password,
         ]);
 
-        $_SESSION['id'] = $connexion->lastInsertId();
-
         header('Location: ../../index.php?success= Compte Creer avec succes !');
 }else{
 
