@@ -37,12 +37,14 @@ require __DIR__ . '/../setting/messages.php';
                   ?>  <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#connexion">Se connecter</button>
                     <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#createAcount">Crer un compte</button>
                <?php } else {
+
                   ?> 
                    <a href="../process/login_and_register_process/Deconnexion.php"><button class="btn btn-outline-light" type="button">Deconnexion</button></a>
                    <?php 
                    if ($_SESSION['pseudo'] == "admin") {
                     ?>    <a href="../pages/admin.php"><button class="btn btn-outline-light" type="button">Page Administrateur</button></a>
                 
+
                   <?php } } ?>
 
             </div>

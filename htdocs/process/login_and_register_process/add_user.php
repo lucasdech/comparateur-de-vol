@@ -20,6 +20,7 @@ if (!empty($_POST['Username'])
             $hashed_password,
         ]);
 
+
         header('Location: ../../index.php?success= Compte Creer avec succes !');
 }else{
 

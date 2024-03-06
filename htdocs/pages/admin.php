@@ -3,13 +3,15 @@
 <?php 
 
     // je prepare ma requete sql et mon SELECT FROM 
-    $prepareSQL = $connexion->prepare("SELECT name FROM tour_operator");
+    $prepareSQL = $connexion->prepare("SELECT * FROM tour_operator");
     // j'execute ma requete sql
+
 
     $prepareSQL->execute();
     // je fais un tableau associatif 
 
     $TourOperatorList = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
+var_dump($TourOperatorList);
 
 ?>
 
@@ -61,7 +63,7 @@
 
                         <?php foreach ($TourOperatorList as $key) {
                                 ?>
-                                <option name="Operator"><?=$key["name"]?></option>    
+                                <option name="Operator" value="<?=$key["id"]?>"><?=$key["name"]?></option>    
                         <?php } ?>                
             </select> 
                 
