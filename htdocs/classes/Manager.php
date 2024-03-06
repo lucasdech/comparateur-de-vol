@@ -38,7 +38,6 @@ class Manager{
   }
  
 
-
    public function DestinationByCompanie(string $destination)
    {
        $prepareSQL = $this->connexion->prepare('SELECT * FROM destination 
@@ -67,5 +66,76 @@ class Manager{
 
  }
 
+
+
+    public function getALLTourOperator() 
+    {
+        $prepareSQL = $this->connexion->prepare('SELECT * FROM tour_operator');
+        $prepareSQL->execute();
+
+        $tourOperator = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
+
+        $tourOperatorArray = [];
+
+        foreach ($tourOperator as $key) {
+   
+             $OperatorObject = new TourOperateur($key);   
+             array_push($tourOperatorArray, $OperatorObject);
+      }
+
+      return $tourOperatorArray;
+    }
   
+
+    public function GetDestinationById(int $id)
+    {
+      $prepareSQL = $this->connexion->prepare('SELECT * FROM destination WHERE destination.id = ?');
+      $prepareSQL->execute([$id]);
+
+      $destination = $prepareSQL->fetch(PDO::FETCH_ASSOC);
+      
+        $destinationObject = new Destination($destination);  
+
+    return $destinationObject;
+    }
+
+
+    public function getTourOperatorByDestination($id)
+    {
+      $prepareSQL = $this->connexion->prepare('SELECT * FROM destination
+                                                  JOIN tour_operator 
+                                                ON destination.tour_operator_id = tour_operator.idTO 
+                                                  WHERE destination.tour_operator_id = ? 
+                                                ');
+      $prepareSQL->execute([$id]);
+
+      $tourOperator = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
+
+      $array = [];
+
+      foreach ($tourOperator as $key) {
+
+        $tourOperatorObject = new TourOperateur($key);
+        array_push($array, $tourOperatorObject);
+      }
+
+      return $array;
+    }
+
+    public function getscoreByTourOperatorId($id)
+    {
+      $prepareSQL = $this->connexion->prepare('SELECT * FROM score WHERE score.tour_operator_id = ?');
+      $prepareSQL->execute([$id]);
+
+      $score = $prepareSQL->fetch(PDO::FETCH_ASSOC);
+
+      var_dump($score);
+      die;
+
+      $objectScore = new Score($score);
+
+      return $objectScore;
+    }
+
+
 }

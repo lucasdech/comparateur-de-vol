@@ -32,7 +32,7 @@
                         <p class="fs-1"><?=$location?></p>
                     </div>   
                     <div class="col-5"> 
-                        <a href="./pages/details.php?Destination=<?=$location?>&IDdestination=<?=$location?>"><button class="btn btn-outline-light m-3">Voir les offres<i class="fa-solid fa-angles-right ms-3" style="color: #ffffff;"></i></button></a> 
+                        <a href="./pages/details.php?Destination=<?=$location?>"><button class="btn btn-outline-light m-3">Voir les offres<i class="fa-solid fa-angles-right ms-3" style="color: #ffffff;"></i></button></a> 
                     </div>
                 </section>
 
