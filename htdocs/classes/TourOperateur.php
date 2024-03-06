@@ -3,7 +3,7 @@
 
 class TourOperateur{
 
-    private int $id;
+    private int $idTO;
     private string $name;
     private string $link;
     private bool $certificate = false;
@@ -35,9 +35,9 @@ class TourOperateur{
 
     // GETTER
 
-    public function getId()
+    public function getIdTO()
     {
-        return $this->id;
+        return $this->idTO;
     }
 
     public function getName()
@@ -72,9 +72,9 @@ class TourOperateur{
 
     // SETTER
 
-    public function setId($id)
+    public function setIdTO($idTO)
     {
-        $this->id = $id;
+        $this->idTO = $idTO;
     }
 
     public function setName($name)
