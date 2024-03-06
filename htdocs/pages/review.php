@@ -4,11 +4,18 @@
 
 
 
+<section>
 
 
 
+</section>
 
 
+<section>
 
-<?php include "./partials/footer.php"?>
+
+</section>
+
+
+<?php include "../partials/footer.php"?>
 
