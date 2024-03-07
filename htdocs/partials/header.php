@@ -100,8 +100,8 @@ require __DIR__ . '/../setting/messages.php';
 
 
     <!-- début navbar de la gauche  -->
-
-    <!-- <section class="Left_Nav d-flex col-12 justify-content-center text-center text-white">
+<!-- 
+    <section class="Left_Nav d-flex col-12 justify-content-center text-center text-white">
         <div class="mt-5 me-2 row col-10">
           <a href="../pages/agenceList.php"><button class="btn btn-outline-light m-3">Toute nos agences</button></a>
           <button class="btn btn-outline-light m-3">quelque chose</button>

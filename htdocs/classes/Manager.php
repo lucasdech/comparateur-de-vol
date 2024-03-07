@@ -68,30 +68,29 @@ class Manager{
 
 
 
-    public function getALLTourOperator() 
-    {
-        $prepareSQL = $this->connexion->prepare('SELECT * FROM tour_operator');
-        $prepareSQL->execute();
+  //  public function getALLTourOperator() 
+  //  {
+  //      $prepareSQL = $this->connexion->prepare('SELECT * FROM tour_operator');
+  //      $prepareSQL->execute();
 
-        $tourOperator = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
+  //      $tourOperator = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
 
-        $tourOperatorArray = [];
+  //      $tourOperatorArray = [];
 
-        foreach ($tourOperator as $key) {
+  //      foreach ($tourOperator as $key) {
    
-             $OperatorObject = new TourOperateur($key);   
-             array_push($tourOperatorArray, $OperatorObject);
-      }
+  //           $OperatorObject = new TourOperateur($key);   
+  //           array_push($tourOperatorArray, $OperatorObject);
+  //    }
 
-      return $tourOperatorArray;
-    }
+  //    return $tourOperatorArray;
+  //  }
   
 
     public function getALLTourOperator()
     {
           $prepareSQL = $this->connexion->prepare('SELECT * FROM tour_operator 
-                                                      JOIN review  
-                                                      ON tour_operator.idTO = review.tour_operator_id');
+                                                      ');
           $prepareSQL->execute();
           
           $TourOperator = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
@@ -148,13 +147,12 @@ class Manager{
 
     public function getscoreByTourOperatorId($id)
     {
-      $prepareSQL = $this->connexion->prepare('SELECT * FROM score WHERE score.tour_operator_id = ?');
+      $prepareSQL = $this->connexion->prepare('SELECT * FROM score WHERE tour_operator_id = ?');
       $prepareSQL->execute([$id]);
 
       $score = $prepareSQL->fetch(PDO::FETCH_ASSOC);
 
-      var_dump($score);
-      die;
+     
 
       $objectScore = new Score($score);
 
