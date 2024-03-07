@@ -85,7 +85,6 @@
                     <?php foreach ($DestinationList as $key) {
                         ?>
                         <option name="name&operator" value="<?=$key['idTO']?>"> <?=$key["location"]?> avec <?= $key['name']?> </option> 
-                        <input type="hidden" name="location" value="<?=$key['location']?>">   
                     <?php } ?>   
 
                 </select> 
