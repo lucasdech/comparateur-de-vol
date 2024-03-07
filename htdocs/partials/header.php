@@ -106,6 +106,7 @@ require __DIR__ . '/../setting/messages.php';
 
 
     <!-- début navbar de la gauche  -->
+
     
         <!-- <section class="Left_Nav d-flex col-12 justify-content-center text-center text-white">
             <div class="mt-5 me-2 row col-10">
@@ -120,6 +121,7 @@ require __DIR__ . '/../setting/messages.php';
                 <i class="fa-brands fa-instagram" style="color: #ffffff;"></i><p>@stepahne_supercar</p>
             </div> 
         </section> -->
+
 
     <!-- fin navbar de la gauche  -->
 

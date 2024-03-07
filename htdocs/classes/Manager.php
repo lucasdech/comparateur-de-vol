@@ -90,7 +90,10 @@ class Manager{
     public function getALLTourOperator()
     {
           $prepareSQL = $this->connexion->prepare('SELECT * FROM tour_operator 
-                                                      ');
+                                                    JOIN review 
+                                                      ON review.tour_operator_id = tour_operator.idTO 
+                                                    JOIN author 
+                                                      ON author.id = review.author_id');
           $prepareSQL->execute();
           
           $TourOperator = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
