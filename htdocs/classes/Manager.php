@@ -153,13 +153,24 @@ class Manager{
       $prepareSQL = $this->connexion->prepare('SELECT * FROM score WHERE tour_operator_id = ?');
       $prepareSQL->execute([$id]);
 
+      
       $score = $prepareSQL->fetch(PDO::FETCH_ASSOC);
-
-     
-
+      
       $objectScore = new Score($score);
 
       return $objectScore;
+    }
+
+
+    public function ChangePrice($idTO, $nameOfLocation, $price)
+    {
+      $prepareSQL = $this->connexion->prepare('UPDATE destination SET price = ? WHERE tour_operator_id = ? AND location = ?');
+      $prepareSQL->execute([
+        $price,
+        $idTO,
+        $nameOfLocation
+      ]);
+
     }
 
 
