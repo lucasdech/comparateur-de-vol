@@ -12,12 +12,12 @@
    $tourOperator = $Manager->getTourOperatorByDestination($idtourOperator);
 
 
-   $score = $Manager->getscoreByTourOperatorId($idtourOperator);
+//    $score = $Manager->getscoreByTourOperatorId($idtourOperator);
    
 
-      echo "<pre>";
-      var_dump($score);
-      echo "</pre>";
+//       echo "<pre>";
+//       var_dump($score);
+//       echo "</pre>";
 
 ?>
 

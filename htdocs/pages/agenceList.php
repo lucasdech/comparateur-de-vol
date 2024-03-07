@@ -5,13 +5,10 @@
 $Manager = new Manager($connexion);
 
 $tourOperator = $Manager->getALLTourOperator();
+
 echo '<pre>';
 var_dump($tourOperator);
 echo '</pre>';
-
-
-var_dump($_SESSION);
-
 
 ?>
 
