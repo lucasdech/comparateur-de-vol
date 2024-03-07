@@ -44,7 +44,7 @@ foreach ($tourOperator as $key) {
 
                                     if ($review == $idTO) {
 
-                                ?>  <div class="bg-white rounded w-50" style="height: 200px;"> <?=$key->getMessage()?>PARTIE COMMENTAIRE de cons</div>
+                                ?>  <div class="bg-white rounded w-50" style="height: 200px;"> <?=$key->getMessage()?>PARTIE COMMENTAIRE de cons otn ta mere</div>
                                   
                               <?php  }
                                     }
