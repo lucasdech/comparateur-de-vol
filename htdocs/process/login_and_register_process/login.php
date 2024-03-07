@@ -9,7 +9,7 @@ if (!empty($_POST['Username']) && !empty($_POST['Password'])) {
 
     require_once '../../setting/db.php';
 
-    $preparedRequest = $connexion->prepare("SELECT * FROM author WHERE name = ? ");
+    $preparedRequest = $connexion->prepare("SELECT * FROM author WHERE UserName = ? ");
     $preparedRequest->execute([
         $_POST['Username']
     ]);
@@ -21,7 +21,7 @@ if (!empty($_POST['Username']) && !empty($_POST['Password'])) {
     $isverified = password_verify($inputPassword, $hash);
     if ($isverified) {
         
-         $_SESSION['pseudo'] = $user["name"];
+         $_SESSION['pseudo'] = $user["UserName"];
         
          header('Location: ../../index.php?success= Bonjour ' . $_SESSION['pseudo'] . " " .' !');
             exit();
