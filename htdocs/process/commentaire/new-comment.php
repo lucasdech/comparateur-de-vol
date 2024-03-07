@@ -35,7 +35,12 @@ if (!empty($_POST['chat'])) {
         $author['id'],
     ]);
 
+    header("Location: ../../../pages/agenceList.php?success= Commentaire bien ajouté ! Merci.");
+} else {
+    
+    header("Location: ../../../pages/agenceList.php?error= Echec lors de l'ajout d'un comentaire, merci de reessayer .");
 }
+
 
 
 // faire les header location

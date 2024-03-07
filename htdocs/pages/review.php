@@ -12,13 +12,9 @@
    $tourOperator = $Manager->getTourOperatorByDestination($idtourOperator);
 
 
-//    $score = $Manager->getscoreByTourOperatorId($idtourOperator);
    
-
-//       echo "<pre>";
-//       var_dump($score);
-//       echo "</pre>";
-
+   $score = $Manager->getscoreByTourOperatorId($idtourOperator);
+      
 ?>
 
 
@@ -118,16 +114,17 @@
                     ?> <img src="../images/images/certif.png" alt="" width="150px">
                 <?php }
             ?>
-            <div class="col-4">
+            <div class="col-3">
                 <a href="<?=$tourOperator[0]->getLink()?>"><img src="../images/images/Agencedevoyage/<?=$tourOperator[0]->getName()?>.jpeg" alt="" width="150px"></a>
             </div>  
-            <div class="col-8 d-flex align-items-center">
-                <h3 class="me-5"><?=$tourOperator[0]->getName()?></h3>
-                <a href="#"><button class="btn btn-outline-light">Voir le tour operateur</button></a>
+            <div class="col-10 d-flex align-items-center">
+                <h3 class="me-5"><?=$tourOperator[0]->getName()?> -- Noté <?=$score->getValue()?>/5</h3>
+                <p></p>
+                <a href="../pages/agenceList.php"><button class="btn btn-outline-light">Voir le tour operateur</button></a>
             </div>
         
         </section>
-
+ 
 </section>
 
 

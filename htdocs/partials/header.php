@@ -26,6 +26,12 @@ require __DIR__ . '/../setting/messages.php';
                 <a href="../index.php"><img src="../images/images/logo.png" alt="logo de l'entreprise de voyage" height="100px"></a>
             </div>
             <div>
+                <?php 
+                    if (!empty($_SESSION['pseudo'])) {
+                        ?><p class="text-white p-2 rounded" style="background-color: rgba(0, 0, 0, 0.5);">connecter en tant que : <?=$_SESSION['pseudo']?></p>
+                    <?php } ?>
+            </div>
+            <div>
                 <h1 class="text-white">TRAV L<i class="fa-solid fa-earth-africa fa-xs" style="color: #ffffff;"></i>W</h1>
             </div>
             <div>
@@ -100,20 +106,20 @@ require __DIR__ . '/../setting/messages.php';
 
 
     <!-- début navbar de la gauche  -->
-<!-- 
-    <section class="Left_Nav d-flex col-12 justify-content-center text-center text-white">
-        <div class="mt-5 me-2 row col-10">
-          <a href="../pages/agenceList.php"><button class="btn btn-outline-light m-3">Toute nos agences</button></a>
-          <button class="btn btn-outline-light m-3">quelque chose</button>
-          <button class="btn btn-outline-light m-3">quelque chose</button>
-          <button class="btn btn-outline-light m-3">quelque chose</button>
-          <button class="btn btn-outline-light m-3">quelque chose</button>
-        
-            <i class="mt-5 fa-solid fa-phone" style="color: #ffffff;"></i><p>06-25-92-32-26</p>
-            <i class="fa-solid fa-at" style="color: #ffffff;"></i> <p>TravLow@voyagePasChere.com</p>
-            <i class="fa-brands fa-instagram" style="color: #ffffff;"></i><p>@stepahne_supercar</p>
-        </div> 
-    </section> -->
+    
+        <!-- <section class="Left_Nav d-flex col-12 justify-content-center text-center text-white">
+            <div class="mt-5 me-2 row col-10">
+            <a href="../pages/agenceList.php"><button class="btn btn-outline-light m-3">Toute nos agences</button></a>
+            <button class="btn btn-outline-light m-3">quelque chose</button>
+            <button class="btn btn-outline-light m-3">quelque chose</button>
+            <button class="btn btn-outline-light m-3">quelque chose</button>
+            <button class="btn btn-outline-light m-3">quelque chose</button>
+            
+                <i class="mt-5 fa-solid fa-phone" style="color: #ffffff;"></i><p>06-25-92-32-26</p>
+                <i class="fa-solid fa-at" style="color: #ffffff;"></i> <p>TravLow@voyagePasChere.com</p>
+                <i class="fa-brands fa-instagram" style="color: #ffffff;"></i><p>@stepahne_supercar</p>
+            </div> 
+        </section> -->
 
     <!-- fin navbar de la gauche  -->
 
