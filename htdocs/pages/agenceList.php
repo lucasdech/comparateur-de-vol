@@ -18,7 +18,8 @@ echo '</pre>';
 
 foreach ($tourOperator as $key) {
 
-?>
+    $idTO = $key->getIdTO(); ?>
+
     <section class="container cardlist d-flex">
 
         <div class=" col-2  img-wrapper m-5">
@@ -31,17 +32,31 @@ foreach ($tourOperator as $key) {
                 <h3 class="text-white">Présentation de notre agence de voyage</h3>
             </div>
 
-            <div class="row">
+              <div class="row">
 
-                <div class="bg-white rounded w-50" style="height: 200px;"><?=$key->getMessage()?>PARTIE COMMENTAIRE</div>
+                  <?php foreach ($tourOperator as $key) {
 
-                <div class="col-9">
-                    <form action="../process/commentaire/new-comment.php?tour_operator_id=<?= $key->getIdTO() ?>" class="d-flex" role="search" method="post">
-                        <input class="form-control me-2" name="chat" id="chat" placeholder="Laisser un commentaire..." aria-label="Search">
-                        <button class="btn btn-danger" type="submit">Envoyer</button>
-                    </form>
-                </div>
-            </div>
+                          $reviews = $key->getReview();
+
+                                foreach ($reviews as $key) {
+
+                                    $review = $key->getIdR();
+
+                                    if ($review == $idTO) {
+
+                                ?>  <div class="bg-white rounded w-50" style="height: 200px;"> <?=$key->getMessage()?>PARTIE COMMENTAIRE</div>
+                                  
+                              <?php  }
+                                    }
+                            } ?>
+
+                  <div class="col-9">
+                      <form action="../process/commentaire/new-comment.php?tour_operator_id=<?= $key->getIdTO() ?>" class="d-flex" role="search" method="post">
+                          <input class="form-control me-2" name="chat" id="chat" placeholder="Laisser un commentaire..." aria-label="Search">
+                          <button class="btn btn-danger" type="submit">Envoyer</button>
+                      </form>
+                  </div>
+              </div>
         </div>
 
     </section>
