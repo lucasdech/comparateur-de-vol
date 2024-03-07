@@ -13,7 +13,7 @@ if (!empty($_POST['Username'])
         $hashed_password = password_hash($_POST["Password"], PASSWORD_DEFAULT);
 
         $preparedRequestCreateUser = $connexion->prepare(
-            "INSERT INTO author (`name`, `passWord`) VALUES (?,?)"
+            "INSERT INTO author (`Username`, `passWord`) VALUES (?,?)"
         );
         $preparedRequestCreateUser->execute([
             $_POST["Username"],
