@@ -3,7 +3,7 @@
 
 class Review{
 
-    private int $id;
+    private int $idR;
     private string $message;
     private string $author;
 
@@ -31,9 +31,9 @@ class Review{
 
     // GETTER
 
-    public function getId()
+    public function getIdR()
     {
-        return $this->id;
+        return $this->idR;
     }
 
     public function getAuthor()
@@ -48,9 +48,9 @@ class Review{
 
     // SETTER 
 
-    public function setId($id)
+    public function setIdR($idR)
     {
-        $this->id = $id;
+        $this->idR= $idR;
     }
 
     public function setAuthor($author)
