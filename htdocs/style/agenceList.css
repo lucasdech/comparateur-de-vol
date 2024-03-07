@@ -1,0 +1,37 @@
+.img-wrapper {  
+    width: 200px;
+    height: 200px;
+    overflow: hidden; 
+  }
+  
+  .inner-img {
+    transition: 0.3s;
+  }
+  
+  .inner-img:hover {
+    transform: scale(1.1);
+  }
+  
+  
+ 
+
+/* 
+  .container {
+    width: 80%;
+    height: 300px;
+    border: 1px black solid;
+} */
+
+    .center {
+        text-align: center;
+    }
+
+    .cardlist {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 70%;
+        height: 400px;
+        margin-top: 5%;
+        margin-left: 15%;
+    }
+
+    
