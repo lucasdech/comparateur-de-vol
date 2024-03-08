@@ -25,8 +25,6 @@ class Manager{
     foreach ($listDestinations as $key) {
 
       $destination = new Destination($key);
-      // var_dump($destination);
-    
 
        if (in_array($destination->getLocation(), $destinationArray) == false) {
         
@@ -34,9 +32,19 @@ class Manager{
        }
     }
 
-    return $destinationArray;
+  return $destinationArray;
   }
  
+  public function GetDestinationByTo($id)
+  {
+    $prepareSQL = $this->connexion->prepare('SELECT destination WHERE destination.tour_operator_id = ?');
+    $prepareSQL->execute([$id]);
+
+    $destinationById = $prepareSQL->fetch(PDO::FETCH_ASSOC);
+
+    return $destinationById;
+
+  }
 
    public function DestinationByCompanie(string $destination)
    {
@@ -63,31 +71,31 @@ class Manager{
    }
   
      return $destinationArray;
-
- }
-
-
-
-  //  public function getALLTourOperator() 
-  //  {
-  //      $prepareSQL = $this->connexion->prepare('SELECT * FROM tour_operator');
-  //      $prepareSQL->execute();
-
-  //      $tourOperator = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
-
-  //      $tourOperatorArray = [];
-
-  //      foreach ($tourOperator as $key) {
-   
-  //           $OperatorObject = new TourOperateur($key);   
-  //           array_push($tourOperatorArray, $OperatorObject);
-  //    }
-
-  //    return $tourOperatorArray;
-  //  }
+    }
   
 
-    public function getALLTourOperator()
+
+    public function getAllTourOperator()
+    {
+    $prepareSQL = $this->connexion->prepare('SELECT * FROM tour_operator');
+    $prepareSQL->execute();
+
+    $lisTour_Operator = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
+
+    $ArrayTour_operator = [];
+
+    foreach ($lisTour_Operator as $key) {
+
+      $tourOperator = new TourOperateur($key);
+      array_push($ArrayTour_operator, $tourOperator);
+    }
+
+    return $ArrayTour_operator;
+    }
+
+
+
+    public function getALLTourOperatorWithReview()
     {
           $prepareSQL = $this->connexion->prepare('SELECT * FROM tour_operator 
                                                     JOIN review 
@@ -126,6 +134,7 @@ class Manager{
     }
 
 
+
     public function getTourOperatorByDestination($id)
     {
       $prepareSQL = $this->connexion->prepare('SELECT * FROM destination
@@ -148,6 +157,8 @@ class Manager{
       return $array;
     }
 
+
+
     public function getscoreByTourOperatorId($id)
     {
       $prepareSQL = $this->connexion->prepare('SELECT * FROM score WHERE tour_operator_id = ?');
@@ -162,14 +173,15 @@ class Manager{
     }
 
 
+
     public function ChangePrice($idTO, $nameOfLocation, $price)
     {
       $prepareSQL = $this->connexion->prepare('UPDATE destination SET price = ? WHERE tour_operator_id = ? AND location = ?');
       $prepareSQL->execute([
-        $price,
-        $idTO,
-        $nameOfLocation
-      ]);
+              $price,
+              $idTO,
+              $nameOfLocation
+            ]);
 
     }
 

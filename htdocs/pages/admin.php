@@ -2,12 +2,11 @@
 
 <?php 
 
-    // je prepare ma requete sql et mon SELECT FROM 
-    $prepareSQL = $connexion->prepare("SELECT * FROM tour_operator");
-    // j'execute ma requete sql
-    $prepareSQL->execute();
-    // je fais un tableau associatif 
-    $TourOperatorList = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
+    $manager = new Manager($connexion);
+    $TourOperatorList= $manager->getAllTourOperator();
+
+    // $GetDestinationByTo = $manager->GetDestinationByTo($id);
+
 
     $prepareSQL = $connexion->prepare("SELECT * FROM destination JOIN tour_operator ON tour_operator.idTO = destination.tour_operator_id");
     $prepareSQL->execute();
@@ -63,7 +62,7 @@
 
                             <?php foreach ($TourOperatorList as $key) {
                                     ?>
-                                    <option name="Operator" value="<?=$key["idTO"]?>"><?=$key["name"]?></option>    
+                                    <option name="Operator" value="<?=$key->getIdTO()?>"><?=$key->getName()?></option>    
                             <?php } ?>                
                 </select> 
                     
@@ -82,14 +81,13 @@
 
                 <select name="select" id="TourOperateur-select">
 
-                    <?php foreach ($DestinationList as $key) {
+                    <?php foreach ($TourOperatorList as $key) {
                         ?>
-                        <option name="name&operator" value="<?=$key['idTO']?>"> <?=$key["location"]?> avec <?= $key['name']?> </option> 
+                        <option name="name&operator" value="<?=$key->getName()?>"><?=$key->getName()?></option> 
                     <?php } ?>   
 
                 </select> 
-                    
-                                
+                         
                 <div class="mb-3">
                     <label for="name" class="form-label">Tour Operator Name</label>
                     <input type="number" class="form-control" name="price" id="name" aria-describedby="nameTip">

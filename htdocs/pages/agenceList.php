@@ -4,9 +4,7 @@
 <?php
 $Manager = new Manager($connexion);
 
-$tourOperators = $Manager->getALLTourOperator();
-
-
+$tourOperators = $Manager->getALLTourOperatorWithReview();
 
 ?>
 
