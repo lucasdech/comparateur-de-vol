@@ -1,27 +1,18 @@
 <?php 
 
-// requete sql insert into TableNAME
-// faire mes condition si pas rempli en post
-
 require_once '../../setting/db.php';
+require_once '../../setting/autoLoader.php';
 
 
-if (!empty($_POST['name'])
-&& !empty($_POST['link']))
-
-
-{
-    $preparedRequestCreateTourOp = $connexion->prepare(
-        "INSERT INTO tour_operator (`name`, `link`) VALUES (?,?)"
-    );
-    $preparedRequestCreateTourOp->execute([
-        $_POST["name"],
-        $_POST["link"],
-    ]);
+if (!empty($_POST['name']) && !empty($_POST['link'])){
+    
+    $manager = new Manager($connexion);
+    $CreateTourOperator = $manager->InsertNewTO();
+   
 
     header("Location: ../../pages/admin.php?success= Tour operator ajouter avec succes");
 
 }else {
 
-    header("Location: ../../pages/admin.php?error= Tour operator ajouter avec succes");   
+    header("Location: ../../pages/admin.php?error= Tour operator ajouter avec succes");
 }
