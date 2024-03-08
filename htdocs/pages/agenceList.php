@@ -34,7 +34,7 @@ $tourOperators = $Manager->getALLTourOperatorWithReview();
     <div class="container">
         <div class="col-12">
             <?php foreach ($tourOperator->getReview() as $review) {?>
-                <div class="bg-white rounded text-center mb-3"> <?=$review->getMessage()?> <?=$review->getIdR()?> </div>
+                <div class="bg-white rounded text-center mb-3"> <?=$review->getMessage()?></div>
             <?php } ?>
 
             <!-- Form de commentaire -->

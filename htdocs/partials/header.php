@@ -110,11 +110,11 @@ require __DIR__ . '/../setting/messages.php';
     
         <section class="Left_Nav d-flex col-12 justify-content-center text-center text-white">
             <div class="mt-5 me-2 row col-10">
-            <a href="../pages/agenceList.php"><button class="btn btn-outline-light m-3">Toute nos agences</button></a>
-            <button class="btn btn-outline-light m-3">quelque chose</button>
-            <button class="btn btn-outline-light m-3">quelque chose</button>
-            <button class="btn btn-outline-light m-3">quelque chose</button>
-            <button class="btn btn-outline-light m-3">quelque chose</button>
+                <a href="../index.php"><button class="btn btn-outline-light m-3">Acceuil</button></a>
+                <a href="../pages/agenceList.php"><button class="btn btn-outline-light m-3">Toute nos agences</button></a>
+                <button class="btn btn-outline-light m-3">quelque chose</button>
+                <button class="btn btn-outline-light m-3">quelque chose</button>
+                <button class="btn btn-outline-light m-3">quelque chose</button>
             
                 <i class="mt-5 fa-solid fa-phone" style="color: #ffffff;"></i><p>06-25-92-32-26</p>
                 <i class="fa-solid fa-at" style="color: #ffffff;"></i> <p>TravLow@voyagePasChere.com</p>

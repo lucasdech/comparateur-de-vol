@@ -11,7 +11,7 @@ if (!empty($_POST['chat'])) {
     // Récuperer le message
 
     $preparedRequestGetUser = $connexion->prepare(
-       "SELECT id FROM author WHERE name = ?"
+       "SELECT id FROM author WHERE UserName = ?"
     );
 
     // requete pour faire demarer une session ou en faire une ou reprendre celle en cours
