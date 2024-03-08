@@ -14,7 +14,7 @@ if (!empty($_POST['Username'])
 
         $preparedRequestCreateUser = $connexion->prepare(
 
-          "INSERT INTO author (`UserName`, `passWord`) VALUES (?,?)"
+            "INSERT INTO author (`UserName`, `passWord`) VALUES (?,?)"
 
         );
         $preparedRequestCreateUser->execute([
